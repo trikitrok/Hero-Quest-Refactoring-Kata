@@ -1,14 +1,14 @@
-name: Test Go struct variant
+name: Test go
 
 on:
   push:
     paths:
-      - 'go_struct/**'
-      - '.github/workflows/Go_struct.yml'
+      - 'go/**'
+      - '.github/workflows/go.yml'
   pull_request:
     paths:
-      - 'go_struct/**'
-      - '.github/workflows/Go_struct.yml'
+      - 'go/**'
+      - '.github/workflows/go.yml'
 
 jobs:
   build:
@@ -24,9 +24,9 @@ jobs:
         go-version: '>=1.23.6'
 
     - name: Test
-      working-directory: go_struct
+      working-directory: go
       run: go test -v ./...
 
     - name: Run
-      working-directory: go_struct
+      working-directory: go
       run: go run ./
